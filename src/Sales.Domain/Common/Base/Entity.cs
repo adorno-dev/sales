@@ -2,10 +2,10 @@ using Sales.Domain.Events;
 
 namespace Sales.Domain.Common.Base;
 
-public abstract class Entity
+public abstract class Entity(Guid? id = null)
 {
     // A propria classe ou classes derivadas podem alterar esses valores.
-    public Guid Id { get; protected set; } = Guid.NewGuid();
+    public Guid Id { get; protected set; } = id ?? Guid.NewGuid();
     public DateTime CreatedAt { get; protected set; } = DateTime.UtcNow;
     public DateTime? UpdatedAt { get; protected set; }
 

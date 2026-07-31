@@ -15,6 +15,12 @@ internal static class Guard
         if (value is null)
             throw new DomainException($"{paramName} cannot be null.");
     }
+    
+    public static void AgainstNull<T>(T? value, string paramName, string message)
+    {
+        if (value is null)
+            throw new DomainException(message);
+    }
 
     public static void AgainstNullOrWhiteSpace(string? value, string paramName, string? message = null)
     {

@@ -55,9 +55,17 @@ public sealed class OrderItem : Entity
     public void RemoveUnits(int units)
     {
         Guard.Against<DomainException>(units <= 0, "Should remove at least one unit.");
-        Guard.Against<DomainException>(units > Quantity, "Cannot remove more units than are available in the item.");
+        Guard.Against<DomainException>
+        (
+            condition: units > Quantity, 
+            message: "Cannot remove more units than are available in the item."
+        );
         Quantity -= units;
-        Guard.Against<DomainException>(Quantity == 0, "An order item cannot have zero quantity. (Use the method from Order class to remove it)");
+        Guard.Against<DomainException>
+        (
+            condition: Quantity == 0, 
+            message: "An order item cannot have zero quantity. (Use the method from Order class to remove it)"
+        );
         SetUpdatedAt();
         CalculateTotal();
     }
