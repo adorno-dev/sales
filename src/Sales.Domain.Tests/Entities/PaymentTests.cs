@@ -1,8 +1,8 @@
 using FluentAssertions;
 using Sales.Domain.Common.Enums;
 using Sales.Domain.Common.Exceptions;
-using Sales.Domain.Entities;
-using Sales.Domain.Events;
+using Sales.Domain.Orders.Entities;
+using Sales.Domain.Orders.Events;
 
 namespace Sales.Domain.Tests.Entities;
 

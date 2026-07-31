@@ -1,7 +1,7 @@
 using Sales.Domain.Common.Base;
 using Sales.Domain.Common.Exceptions;
 
-namespace Sales.Domain.ValueObjects;
+namespace Sales.Domain.Orders.ValueObjects;
 
 public sealed class OrderCancellationReason : ValueObject
 {

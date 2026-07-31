@@ -1,7 +1,7 @@
 using Sales.Domain.Common.Enums;
-using Sales.Domain.ValueObjects;
+using Sales.Domain.Orders.ValueObjects;
 
-namespace Sales.Domain.Events;
+namespace Sales.Domain.Orders.Events;
 
 public sealed record OrderCancelledEvent
 (

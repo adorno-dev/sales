@@ -1,6 +1,6 @@
 using FluentAssertions;
 using Sales.Domain.Common.Exceptions;
-using Sales.Domain.ValueObjects;
+using Sales.Domain.Orders.ValueObjects;
 
 namespace Sales.Domain.Tests.ValueObjects;
 

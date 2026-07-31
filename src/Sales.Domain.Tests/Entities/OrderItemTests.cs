@@ -1,7 +1,7 @@
 using FluentAssertions;
 using Sales.Domain.Common.Base;
 using Sales.Domain.Common.Exceptions;
-using Sales.Domain.Entities;
+using Sales.Domain.Orders.Entities;
 
 namespace Sales.Domain.Tests.Entities;
 

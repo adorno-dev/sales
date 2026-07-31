@@ -3,7 +3,7 @@ using Sales.Domain.Common.Base;
 using Sales.Domain.Common.Exceptions;
 using Sales.Domain.Common.Validations;
 
-namespace Sales.Domain.ValueObjects;
+namespace Sales.Domain.Orders.ValueObjects;
 
 public sealed class ShippingAddress : ValueObject
 {

@@ -1,4 +1,4 @@
-using Sales.Domain.Events;
+using Sales.Domain.Orders.Events;
 
 namespace Sales.Domain.Common.Base;
 
