@@ -17,22 +17,24 @@ public sealed class Address : Entity
 
     public Address
     (
-        string postalCode, 
-        string street, 
-        string neighborhood, 
-        string state, 
-        string city, 
+        string postalCode,
+        string street,
+        string neighborhood,
+        string state,
+        string city,
         string country,
         string? complement = null
-    )
+)
     {
+        Validate(postalCode, street, neighborhood, city, state, country);
+
         PostalCode = postalCode;
         Street = street;
+        Complement = complement;
         Neighborhood = neighborhood;
         State = state;
         City = city;
         Country = country;
-        Complement = complement;
     }
 
     internal void Update
@@ -59,16 +61,16 @@ public sealed class Address : Entity
 
     private void Validate
     (
-        string postalCode, 
-        string street, 
-        string neighborhood, 
-        string city, 
-        string state, 
+        string postalCode,
+        string street,
+        string neighborhood,
+        string city,
+        string state,
         string country
     )
     {
         Guard.AgainstNullOrWhiteSpace(postalCode, nameof(postalCode), "Postal code is required.");
-        Guard.Against<DomainException>(!Regex.IsMatch(PostalCode, @"^\d{8}$"), "Invalid postal code format.");
+        Guard.Against<DomainException>(!Regex.IsMatch(postalCode, @"^\d{8}$"), "Invalid postal code format.");
         Guard.AgainstNullOrWhiteSpace(street, nameof(street), "Street is required.");
         Guard.Against<DomainException>(street.Length < 3, "Street must be at least 3 characters long.");
         Guard.AgainstNullOrWhiteSpace(neighborhood, nameof(neighborhood), "Neighborhood is required.");
